@@ -58,6 +58,7 @@ app.post("/", function (req, res) {
     });
   });
   request.write(jsonData);
+  
   request.end();
 });
 
@@ -68,10 +69,3 @@ app.listen(process.env.PORT || 3000, function () {
   console.log("Server is running on port 3000"); // set up the server
 });
 
-// API KEY
-// cb05d85e7d1a49dfa1eb42c87e1485bf-us22
-
-//list id
-// a9bc6e0d95
-// web:node app.mjs -> Procfile
-//  token for  push in the palce of password //  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
