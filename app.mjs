@@ -47,14 +47,14 @@ app.post("/", function (req, res) {
   const url = "https://us22.api.mailchimp.com/3.0/lists/a9bc6e0d95";
   const option = {
     method: "post",
-    auth: "Aditya:782f7296189ff31eff0c9ea6dcd5b4e0-us22",
+    auth: "Aditya:eec9d63f8a1640ef314177eaed824116-us22",
   };
   const request = https.request(url, option, function (response) {
     if (response.statusCode === 200) {
       res.sendFile(__dirname + "/success.html");
     } else res.sendFile(__dirname + "/failure.html");
     response.on("data", function (data) {
-      console.log(JSON.parse(data));
+      // console.log(JSON.parse(data));
     });
   });
   
@@ -66,7 +66,7 @@ app.post("/", function (req, res) {
 app.post("/failure.html", function (req, res) {
   res.redirect("/");
 });
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 3001, function () {
   console.log("Server is running on port 3000"); // set up the server
 });
 
