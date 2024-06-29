@@ -47,16 +47,17 @@ app.post("/", function (req, res) {
   const url = "https://us22.api.mailchimp.com/3.0/lists/a9bc6e0d95";
   const option = {
     method: "post",
-    auth: "Aditya:b05d85e7d1a49dfa1eb42c87e1485bf-us22",
+    auth: "Aditya:782f7296189ff31eff0c9ea6dcd5b4e0-us22",
   };
   const request = https.request(url, option, function (response) {
     if (response.statusCode === 200) {
       res.sendFile(__dirname + "/success.html");
     } else res.sendFile(__dirname + "/failure.html");
     response.on("data", function (data) {
-      // console.log(JSON.parse(data));
+      console.log(JSON.parse(data));
     });
   });
+  
   request.write(jsonData);
   
   request.end();
